@@ -61,4 +61,19 @@ https://github.com/mitchellh/vagrant/issues/6730.
 		$ sudo nf start
 - Update the second NIC from closed-net to bridged, so that the physical server can get the service
 
-	**Note**: When you deployed the physical machine may lead to this issue https://github.com/RackHD/RackHD/issues/57.
+- Update the second NIC from closed-net to bridged, so that the server can get the service
+
+	**Note**: When you deployed the physical machine may lead to this issue [https://github.com/RackHD/RackHD/issues/93](https://github.com/RackHD/RackHD/issues/93 "issue").
+
+##Test
+Once you've started the services, the RackHD API will be available on your local machine through port 9090. For example, you should be able to view the RackHD API documentation that's set up with the service at http://localhost:9090/docs.
+
+You can also interact with the APIs using curl from the command line of your local machine.
+
+To view the list of nodes that has been discovered:
+
+		$ curl http://localhost:9090/api/1.1/nodes | python -m json.tool
+View the list of catalogs logged into RackHD:
+
+		$ curl http://localhost:9090/api/1.1/catalogs | python -m json.tool
+(both of these should result in empty lists in a brand new installation)
