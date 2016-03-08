@@ -61,8 +61,6 @@ https://github.com/mitchellh/vagrant/issues/6730.
 		$ sudo nf start
 - Update the second NIC from closed-net to bridged, so that the physical server can get the service
 
-- Update the second NIC from closed-net to bridged, so that the server can get the service
-
 	**Note**: When you deployed the physical machine may lead to this issue [https://github.com/RackHD/RackHD/issues/93](https://github.com/RackHD/RackHD/issues/93 "issue").
 
 ##Test
