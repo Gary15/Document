@@ -11,6 +11,7 @@
 	**Note:** The VM has mounted shared folders:/vagrant => ~/RackHD/example
 
 ###2. Install a default workflow for CLS Server and a SKUs definition
+Here is the example for CLS server. And how it work, please refer to http://rackhd.readthedocs.org/en/latest/how_it_works.html
 
 1. Write a default workflow for CLS Server install CentOS by using IPMI OBM
 
@@ -45,7 +46,7 @@
 		                    "profile": "install-centos.ipxe",
 		                    "hostname": "localhost",
 		                    "comport": "ttyS0",
-		                    "domain": "rackhd.github.com",
+		                    "domain": "rackhd.demo.com",
 		                    "completionUri": "renasar-ansible.pub",
 		                    "version": "7.0",
 		                    "repo": "{{api.server}}/Centos/{{options.version}}",
@@ -63,7 +64,7 @@
 		        }
 		    ]
 		}
- 
+ 		
 		$ curl -H "Content-Type: application/json" -X PUT --data @samples/CLS_install_centos.json http://localhost:9090/api/1.1/workflows
 2. To enable that workflow, we also need to include a SKU definition that includes the option of another workflow to run once the SKU has been identified. This takes advantage of the `Graph.SKU.Discovery` workflow, which will attempt to identify a SKU and run another workflow if specified.
 
