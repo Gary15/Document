@@ -1,4 +1,5 @@
 #Use RackHD to Install CentOS On Your Server
+This document is describing How to use RackHD service to install CentOS on your Server.
 ###1. Unpacking the CentOS ISO file
 1. Download the ISO file to `~/RackHD/example`
 
