@@ -63,4 +63,4 @@
 	
 	We suspect that the microkenrel can not support the latest CPU platform(Skylake) of Intel.That the Linux Kernel version need be updated to 4.3 can support the Skylake, and we are using the Ubuntu kernel version is 3.16.0-25-generic. 
 	
-	So we are trying to build the microkenrel by using the latest Ubuntu kernel version to try.
+	So we are trying to build the microkenrel by using the latest Ubuntu kernel version.
