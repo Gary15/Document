@@ -7,10 +7,10 @@
 
 		$ vagrant ssh
 		$ sudo mkdir /var/mirrors
-		$ sudo python ~/src/on-http/data/templates/setup_iso.py /vagrant/CentOS-7-x86_64*.iso /var/mirrors --link=/home/vagrant/src
+		$ sudo python ~/src/on-http/data/templates/setup_iso.py /vagrant/CentOS-7-x86_64-DVD-1511.iso /var/mirrors --link=/home/vagrant/src
 	**Note:** The VM has mounted shared folders:/vagrant => ~/RackHD/example
 
-###2. Install a default workflow for CLS Server and a SKUs definition
+###2. Install a default workflow for your Server and a SKUs definition
 Here is the example for CLS server. And how it work, please refer to http://rackhd.readthedocs.org/en/latest/how_it_works.html
 
 1. Write a default workflow for CLS Server install CentOS by using IPMI OBM
@@ -46,7 +46,7 @@ Here is the example for CLS server. And how it work, please refer to http://rack
 		                    "profile": "install-centos.ipxe",
 		                    "hostname": "localhost",
 		                    "comport": "ttyS0",
-		                    "domain": "rackhd.demo.com",
+		                    "domain": "rackhd.github.com",
 		                    "completionUri": "renasar-ansible.pub",
 		                    "version": "7.0",
 		                    "repo": "{{api.server}}/Centos/{{options.version}}",
@@ -64,7 +64,7 @@ Here is the example for CLS server. And how it work, please refer to http://rack
 		        }
 		    ]
 		}
- 		
+ 
 		$ curl -H "Content-Type: application/json" -X PUT --data @samples/CLS_install_centos.json http://localhost:9090/api/1.1/workflows
 2. To enable that workflow, we also need to include a SKU definition that includes the option of another workflow to run once the SKU has been identified. This takes advantage of the `Graph.SKU.Discovery` workflow, which will attempt to identify a SKU and run another workflow if specified.
 
@@ -106,4 +106,6 @@ Here is the example for CLS server. And how it work, please refer to http://rack
 
 ###3.Startup your Machine through PXE 
 
-**Note:** In the process of the installation, You may probably meet the issue that you can not get the "centos.ks" from HTTP server. https://github.com/RackHD/RackHD/issues/68. Or maybe not. It decide your code version. And the log file should be in /tmp/* . If there don't have it, please check this PR https://github.com/RackHD/RackHD/pull/66/files to make sure you have these code in your server. 
+**Note:** In the process of the installation, You may probably meet the issue that you can not get the "centos.ks" from HTTP server. https://github.com/RackHD/RackHD/issues/68. Or maybe not. That would be decided by your code version. 
+
+And the log file should be in /tmp/* . If there don't have it, please check this PR https://github.com/RackHD/RackHD/pull/66/files to make sure you have these code in your server. 
