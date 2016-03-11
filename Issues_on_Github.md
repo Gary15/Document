@@ -1,6 +1,7 @@
-#Closed
-##Issue List
-###1. [Boot from ipxe failed on Dell R610](https://github.com/RackHD/RackHD/issues/52 "https://github.com/RackHD/RackHD/issues/52")
+#Issue Status
+##Closed
+###Issue List
+####1. [Boot from ipxe failed on Dell R610](https://github.com/RackHD/RackHD/issues/52 "https://github.com/RackHD/RackHD/issues/52")
 - Issue description
 
 	After deploy the RackHD server by following https://github.com/RackHD/RackHD/blob/master/example/README.md. And it can demo successfully on VirtualBox.
@@ -20,7 +21,7 @@
 	
 	[Add linux-image-extras package to initrd build environment](https://github.com/RackHD/on-imagebuilder/issues/16 "https://github.com/RackHD/on-imagebuilder/issues/16")
 
-###2. [Can not get the "centos.ks" file](https://github.com/RackHD/RackHD/issues/68 "https://github.com/RackHD/RackHD/issues/68")
+####2. [Can not get the "centos.ks" file](https://github.com/RackHD/RackHD/issues/68 "https://github.com/RackHD/RackHD/issues/68")
 - Issue description
 
 	After resolved the microkernel on Dell R610, the discovery tasks can be done and the IPMI-OBM-Service can be worked. Also install coreOS would be right.
@@ -35,9 +36,9 @@
 	
 	The solution is to sync up all RackHD services, either all to latest or a specified but same branch (like 1.0.x branch is relative stable for CentOS/RHEL/ESXi installation and the 1.1.x branch is also more stable than master).
 
-#Open
-##Issue list
-###1. [The discovery kernel hangs at boot up on new hardware platform](https://github.com/RackHD/RackHD/issues/93 "https://github.com/RackHD/RackHD/issues/93")
+##Open
+###Issue list
+####1. [The discovery kernel hangs at boot up on new hardware platform](https://github.com/RackHD/RackHD/issues/93 "https://github.com/RackHD/RackHD/issues/93")
 - Issue description
 
 	After deploy the RackHD server, fix the discovery OS hang on and ".ks" file rendering error. It can install OS on standard physical server like Dell R610, Inspur NF5270M3. Can finish discovery task , can send IPMI command and work successfully.
