@@ -4,12 +4,12 @@
 ####1. [Boot from ipxe failed on Dell R610](https://github.com/RackHD/RackHD/issues/52 "https://github.com/RackHD/RackHD/issues/52")
 - Issue description
 
-	After deploy the RackHD server by following https://github.com/RackHD/RackHD/blob/master/example/README.md. And it can demo successfully on VirtualBox.
+	After deploy the RackHD server by following link [https://github.com/RackHD/RackHD/blob/master/example/README.md](https://github.com/RackHD/RackHD/blob/master/example/README.md). And it can demo successfully on VirtualBox.
 	
 	Then I update the VM the network Adapter to Brideged Adapter.Connect it to Dell Server(R610).It gets stuck in "random: nonblocking pool is initialized".[Stuck Picture](https://photos.google.com/share/AF1QipO5GBWTvqcPrMLcEXbspenOxShAZLSKFksXrGiA25etHxcfowUAV12A2jyApbVwpw/photo/AF1QipOJIdrjz0WI2V6hslbRHUnp2celUe0-ZIM7jQc8?key=X25UbFR6bVRvUVhhMEJQM0w0SUdMQXRIMmJBaVNn).
 - Root Cause
 
-	The microkernel kernel can not support the hardware platform.
+	The microkernel kernel do not support the hardware platform.
 - Resolved 
 
 	RackHD member provides the Older microkernel files in a zip file at https://www.dropbox.com/s/ph372nd29fw320s/old_microkernel.zip?dl=0 that you can download.Replace the files in the VM at /home/vagrant/src/on-http/static/http/common/ with these files
@@ -37,9 +37,9 @@
 ####3. [Can not get the "centos.ks" file](https://github.com/RackHD/RackHD/issues/68 "https://github.com/RackHD/RackHD/issues/68")
 - Issue description
 
-	After fix the discovery OS hang on, the discovery tasks can be done and the IPMI-OBM-Service can be worked. Also installing coreOS would be right.
+	After fixed the discovery OS hang on, the discovery tasks can be done and the IPMI-OBM-Service can be worked. Also installing coreOS would be right.
 	
-	Then trying to deliver a task to install CentOS.The vmlinuz and initrd of CentOS can be transfer successfully.But the automatic scipt ".ks" file can not be transfered, occurs HTTP GET 500 error.[error picture](https://photos.google.com/share/AF1QipO5GBWTvqcPrMLcEXbspenOxShAZLSKFksXrGiA25etHxcfowUAV12A2jyApbVwpw/photo/AF1QipN_XkFAnufLfadUj-BB114fsFgD-e5K7hXuc28C?key=X25UbFR6bVRvUVhhMEJQM0w0SUdMQXRIMmJBaVNn). So the client go to Dracut Emergency Shell. [Shell Picture](https://photos.google.com/share/AF1QipO5GBWTvqcPrMLcEXbspenOxShAZLSKFksXrGiA25etHxcfowUAV12A2jyApbVwpw/photo/AF1QipNYGqkxFwIYrXMy78L95EUutmmJO8vNKjJmmQPy?key=X25UbFR6bVRvUVhhMEJQM0w0SUdMQXRIMmJBaVNn)
+	Then trying to deliver a task to install CentOS.The vmlinuz and initrd of CentOS can be transfered successfully.But the automatic scipt ".ks" file can not be transfered, occurs HTTP GET 500 error.[error picture](https://photos.google.com/share/AF1QipO5GBWTvqcPrMLcEXbspenOxShAZLSKFksXrGiA25etHxcfowUAV12A2jyApbVwpw/photo/AF1QipN_XkFAnufLfadUj-BB114fsFgD-e5K7hXuc28C?key=X25UbFR6bVRvUVhhMEJQM0w0SUdMQXRIMmJBaVNn). So the client go to Dracut Emergency Shell. [Shell Picture](https://photos.google.com/share/AF1QipO5GBWTvqcPrMLcEXbspenOxShAZLSKFksXrGiA25etHxcfowUAV12A2jyApbVwpw/photo/AF1QipNYGqkxFwIYrXMy78L95EUutmmJO8vNKjJmmQPy?key=X25UbFR6bVRvUVhhMEJQM0w0SUdMQXRIMmJBaVNn)
 - Root Cause
 
 	The on-taskgraph service and on-http service don't match, The RackHD developer has changed the name of "driveId" in kickstart file to "installDisk". So there encountered the "centos-ks" rendering error.
@@ -56,11 +56,11 @@
 ####1. [The discovery kernel hangs at boot up on new hardware platform](https://github.com/RackHD/RackHD/issues/93 "https://github.com/RackHD/RackHD/issues/93")
 - Issue description
 
-	After deploy the RackHD server, fix the discovery OS hang on and ".ks" file rendering error. It can install OS on standard physical server like Dell R610, Inspur NF5270M3. Can finish discovery task , can send IPMI command and work successfully.
+	After deployed the RackHD server, fixed the discovery OS hang on and fixed ".ks" file rendering error. Then we can use RackHD server to finish discovery task , send IPMI command and install OS on standard physical server like Dell R610, Inspur NF5270M3.
 
-	But when trying to use the server to discovery the server which has some the latest hardware like the CPU(Skylake) and Ethernet of Intel, and it get stuck again [Stuck Photo](https://photos.google.com/share/AF1QipNBbvTYirOy1aOgiD42H-yk0HGdvoc3qSodvkhF-GNlU3O7BFjwMoQW_Y3GchDu4g/photo/AF1QipPH7DctXHWTiTBbJ93xDvd7PaLgpnnbFGrke1xJ?key=Q2JOUXk4Nk9vSTVIRHoyVU9GSGlWeXY1NXFkUW1B)
+	But when trying to use the server to discover the server which has some the latest hardware like the CPU(Skylake) and Ethernet of Intel, and it get stuck again [Stuck Photo](https://photos.google.com/share/AF1QipNBbvTYirOy1aOgiD42H-yk0HGdvoc3qSodvkhF-GNlU3O7BFjwMoQW_Y3GchDu4g/photo/AF1QipPH7DctXHWTiTBbJ93xDvd7PaLgpnnbFGrke1xJ?key=Q2JOUXk4Nk9vSTVIRHoyVU9GSGlWeXY1NXFkUW1B)
 - Root Cause investigation
 	
-	We suspect that the microkenrel can not support the latest CPU platform(Skylake) of Intel.That the Linux Kernel version need be updated to 4.3 can support the Skylake, and we are using the Ubuntu kernel version is 3.16.0-25-generic. 
+	We suspected that the microkenrel do not support the latest CPU platform(Skylake) of Intel.That the Linux Kernel version need be updated to 4.3 can support the Skylake, and we are using the Ubuntu kernel version is 3.16.0-25-generic. 
 	
 	So we are trying to build the microkenrel by using the latest Ubuntu kernel version.
