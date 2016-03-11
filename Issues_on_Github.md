@@ -61,6 +61,4 @@
 	But when trying to use the server to discover the server which has some the latest hardware like the CPU(Skylake) and Ethernet of Intel, and it get stuck again [Stuck Photo](https://photos.google.com/share/AF1QipNBbvTYirOy1aOgiD42H-yk0HGdvoc3qSodvkhF-GNlU3O7BFjwMoQW_Y3GchDu4g/photo/AF1QipPH7DctXHWTiTBbJ93xDvd7PaLgpnnbFGrke1xJ?key=Q2JOUXk4Nk9vSTVIRHoyVU9GSGlWeXY1NXFkUW1B)
 - Root Cause investigation
 	
-	We suspected that the microkenrel do not support the latest CPU platform(Skylake) of Intel.That the Linux Kernel version need be updated to 4.3 can support the Skylake, and we are using the Ubuntu kernel version is 3.16.0-25-generic. 
-	
-	So we are trying to build the microkenrel by using the latest Ubuntu kernel version.
+	We suspected that the microkenrel do not support the latest CPU platform(Skylake) of Intel.That the Linux Kernel version need be updated to 4.3 can support the Skylake, and we are using the Ubuntu kernel version is 3.16.0-25-generic.
